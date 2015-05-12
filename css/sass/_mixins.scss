@@ -1,0 +1,17 @@
+@function calculate-rem($size) {
+    $remSize: $size / 16;
+    @return #{$remSize}rem;
+}
+
+@mixin font-size($size) {
+    font-size: $size + px;
+    font-size: calculate-rem($size);
+}
+
+@mixin media($res)
+{
+    @media screen and (min-width: $res)
+    {
+        @content;
+    }
+}
