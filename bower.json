@@ -1,8 +1,8 @@
 {
-  "name": "betting-slip",
+  "name": "react-app",
   "version": "0.0.0",
-  "homepage": "https://github.com/katiefenn/kfenn-rng-app",
-  "description": "A React betting slip app",
+  "homepage": "https://github.com/katiefenn/react-app",
+  "description": "A template for a small react app",
   "license": "MIT",
   "ignore": [
     "**/.*",
