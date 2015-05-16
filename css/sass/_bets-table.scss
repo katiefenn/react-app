@@ -1,0 +1,16 @@
+.bets-table {
+	border-collapse: collapse;
+
+	td, th {
+		padding: 10px;
+		border-bottom: 1px solid $primary-border;
+	}
+}
+
+	.bets-table_column {
+		width: 200px;
+	}
+
+	.bets-table_column__odds {
+		text-align: center;
+	}

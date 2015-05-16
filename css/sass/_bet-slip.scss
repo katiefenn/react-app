@@ -1,0 +1,58 @@
+.bet-slip {
+	margin: 2em 0;
+	border-top: 1px solid $primary-border;
+	border-bottom: 1px solid $primary-border;
+
+	h2, h3 {
+		margin: 0.5em 0 0.25em;
+	}
+}
+
+	.bet-slip_stake {
+		margin-right: 1em;
+
+		.input-text {
+			display: inline;
+
+			input {
+				font-size: 1em;
+				width: 50px;
+			}
+		}
+
+		.receipt & {
+			.input-text input {
+				border: 0;
+			}
+		}
+	}
+
+	.bet-slip_submit {
+		font-size: 1em;
+
+		.input-submit {
+			display: inline;
+		}
+
+		.waiting & {
+			.input-submit::after {
+				display: inline-block;
+				content: " ";
+				width: 16px;
+				height: 16px;
+				background: url(../img/loading.gif);				
+			}
+		}
+
+		.receipt & {
+			display: none;
+		}
+	}
+
+	.bet-slip_confirm {
+		display: none;
+
+		.receipt & {
+			display: block;
+		}
+	}

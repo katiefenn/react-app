@@ -9,14 +9,19 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <h1>React App Template</h1>
-    <form name="app-form" id="app-form" class="form">
-    </form>
+    <h1>Bets</h1>
+    <div id="available-bets-table"></div>
+    <div id="bet-slip" class="bet-slip">
+        <h2>Bet Slip</h2>
+        <p>Please select a bet</p>
+    </div>
 
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/lodash/lodash.min.js"></script>
     <script type="text/javascript" src="bower_components/react/react.js"></script>
     <script type="text/javascript" src="bower_components/react/JSXTransformer.js"></script>
-    <script type="text/jsx" src="src/app-component.js"></script>
+    <script type="text/jsx" src="src/available-bet.js"></script>
+    <script type="text/jsx" src="src/available-bets-table.js"></script>
+    <script type="text/jsx" src="src/bet-slip.js"></script>
 </body>
 </html>

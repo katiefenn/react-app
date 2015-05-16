@@ -1,6 +1,29 @@
 /* Media breakpoints */
 body { font-family: 'Lato', sans-serif; font-weight: 400; }
 
-h1, h2 { font-weight: 300; }
+h1, h2, h3 { font-weight: 300; }
+
+.bet-slip { margin: 2em 0; border-top: 1px solid #25265f; border-bottom: 1px solid #25265f; }
+.bet-slip h2, .bet-slip h3 { margin: 0.5em 0 0.25em; }
+
+.bet-slip_stake { margin-right: 1em; }
+.bet-slip_stake .input-text { display: inline; }
+.bet-slip_stake .input-text input { font-size: 1em; width: 50px; }
+.receipt .bet-slip_stake .input-text input { border: 0; }
+
+.bet-slip_submit { font-size: 1em; }
+.bet-slip_submit .input-submit { display: inline; }
+.waiting .bet-slip_submit .input-submit::after { display: inline-block; content: " "; width: 16px; height: 16px; background: url(../img/loading.gif); }
+.receipt .bet-slip_submit { display: none; }
+
+.bet-slip_confirm { display: none; }
+.receipt .bet-slip_confirm { display: block; }
+
+.bets-table { border-collapse: collapse; }
+.bets-table td, .bets-table th { padding: 10px; border-bottom: 1px solid #25265f; }
+
+.bets-table_column { width: 200px; }
+
+.bets-table_column__odds { text-align: center; }
 
 /*# sourceMappingURL=styles.css.map */
