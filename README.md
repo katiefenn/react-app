@@ -6,6 +6,7 @@ The app is bundled with a development server. To use it, make sure you have the 
 
 - Node.JS
 - npm
+- bower
 - Grunt
 
 Then run the commands from the command line in the project root directory:
