@@ -18,11 +18,3 @@ grunt server
 Grunt should automatically open a tab in a web browser, but if this doesn't work, the website can be viewed with the URL:
 
 [http://localhost:9001/](http://localhost:9001/)
-
-Then run the commands from the command line:
-
-```
-grunt server
-npm test
-```
-N.b. you will need to use separate terminal windows to run each command, because Grunt waits for connections to the server.
