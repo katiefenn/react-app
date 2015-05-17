@@ -19,8 +19,7 @@ var BetSlip = React.createClass({
             "stake": this.state.stake
         };
 
-        this.showPlacingBet();
-
+        // Post bet to web service
         BettingService.placeBet(data, this.handleBetSuccess, this);
     },
     handleStakeChange: function () {
@@ -28,6 +27,12 @@ var BetSlip = React.createClass({
             numerator = this.props.odds.numerator,
             denominator = this.props.odds.denominator;
 
+        // Handle non-number stake values
+        if (!_.isFinite(stake)) {
+            stake = 0;
+        }
+
+        // Show potential winnings for stake entered
         this.setState({
             stake: stake,
             winnings: this.calculateWinnings(stake, numerator, denominator)
@@ -36,9 +41,6 @@ var BetSlip = React.createClass({
     handleBetSuccess: function (data) {
         this.showReceipt();
         this.setState({reference: data.transaction_id});
-    },
-    showPlacingBet: function () {
-        this.setState({status: 'waiting'});
     },
     showReceipt: function () {
         this.setState({status: 'receipt'});

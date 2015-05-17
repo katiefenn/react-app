@@ -5,6 +5,8 @@ var AvailableBetsTable = React.createClass({
         };
     },
     componentDidMount: function () {
+        // When component mounts, get bets from
+        // the web service
         BettingService.getAvailableBets(function (data) {
             if (this.isMounted()) {
                 this.setState({
@@ -14,10 +16,16 @@ var AvailableBetsTable = React.createClass({
         }, this);
     },
     render: function() {
+        // Render table items
         var betListItems = this.state.bets.map(function (bet) {
             var odds = bet.odds.numerator + " / " + bet.odds.denominator;
             return (
-                <AvailableBet key={bet.bet_id} betid={bet.bet_id} event={bet.event} name={bet.name} odds={bet.odds} />
+                <AvailableBet
+                    key={bet.bet_id}
+                    betid={bet.bet_id}
+                    event={bet.event}
+                    name={bet.name}
+                    odds={bet.odds} />
             );
         }, this);
 

@@ -11,13 +11,13 @@ body { margin: 0 0 200px; }
 
 .bet-slip_stake { margin: 1em 0; }
 .bet-slip_stake .input-text { display: inline; }
-.bet-slip_stake .input-text input { font-size: 1em; width: 40px; }
+.bet-slip_stake .input-text input { font-size: 16px; font-size: 1rem; width: 40px; }
 .receipt .bet-slip_stake input { color: #F3F3F3; border: 0; background: transparent; }
 @media screen and (min-width: 800px) { .receipt .bet-slip_stake input { color: #25265F; } }
 
 .bet-slip_submit { margin: 1em 0; }
 .bet-slip_submit .input-submit { display: inline; }
-.bet-slip_submit button { font-size: 1em; height: 2em; width: 100%; }
+.bet-slip_submit button { font-size: 16px; font-size: 1rem; height: 2em; width: 100%; }
 .receipt .bet-slip_submit { display: none; }
 
 .bet-slip_confirm { display: none; margin: 1em 0; }

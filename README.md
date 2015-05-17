@@ -12,6 +12,7 @@ Then run the commands from the command line in the project root directory:
 
 ```
 npm install
+bower install
 grunt server
 ```
 

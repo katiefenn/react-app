@@ -6,6 +6,8 @@ var AvailableBet = React.createClass({
             <BetSlip betid={this.props.betid} event={this.props.event} name={this.props.name} odds={this.props.odds} />,
             document.getElementById('bet-slip'),
             function () {
+                // Reset BetSlip state so that more bets
+                // can be made after bet is placed
                 this.replaceState(this.getInitialState());
             }
         );
