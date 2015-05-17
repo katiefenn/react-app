@@ -1,5 +1,5 @@
-# React App Template
-A template for small React apps
+# Simple Betting App
+A small app for placing bets and calculating winnings
 
 ## Getting started
 The app is bundled with a development server. To use it, make sure you have the following dependencies installed:
