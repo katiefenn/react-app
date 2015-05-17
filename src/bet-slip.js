@@ -7,6 +7,7 @@ var BetSlip = React.createClass({
         return {
             winnings: this.calculateWinnings(stake, numerator, denominator),
             stake: stake,
+            status: "",
             reference: ""
         };
     },
@@ -37,25 +38,30 @@ var BetSlip = React.createClass({
         this.setState({reference: data.transaction_id});
     },
     showPlacingBet: function () {
-        React.findDOMNode(this.refs.betSlip).className = 'waiting';
+        this.setState({status: 'waiting'});
     },
     showReceipt: function () {
-        React.findDOMNode(this.refs.betSlip).className = 'receipt';
-        React.findDOMNode(this.refs.stake).disabled = true;
+        this.setState({status: 'receipt'});
     },
     calculateWinnings: function (stake, numerator, denominator) {
         return (numerator / denominator) * stake + stake;
     },
     render: function() {
         return (
-            <form name="bet-slip" onSubmit={this.handleBetSubmit} ref="betSlip">
+            <form name="bet-slip" onSubmit={this.handleBetSubmit} className={this.state.status}>
                 <h2>Bet Slip</h2>
                 <input type="hidden" name="betid" ref="betid" value={this.props.betid} />
                 <h3>{this.props.event} - {this.props.name}</h3>
                 <div className="bet-slip_stake">
                     £
                     <div className="input-text">
-                        <input name="stake" type="text" value={this.state.stake} onChange={this.handleStakeChange} ref="stake" />
+                        <input
+                            name="stake"
+                            type="text"
+                            value={this.state.stake}
+                            onChange={this.handleStakeChange}
+                            disabled={this.state.status == "receipt" ? "disabled" : ""}
+                            ref="stake" />
                     </div>
                     @ {this.props.odds.numerator} / {this.props.odds.denominator} could return £{this.state.winnings}
                 </div>

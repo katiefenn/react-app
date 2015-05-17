@@ -19,12 +19,6 @@ Grunt should automatically open a tab in a web browser, but if this doesn't work
 
 [http://localhost:9001/](http://localhost:9001/)
 
-### Testing
-The app is tested using CasperJS functional tests. To test the app, __start the development server__ using the instructions in Getting Started and make sure you have the following dependencies installed:
-
-- PhantomJS
-- CasperJS
-
 Then run the commands from the command line:
 
 ```

@@ -4,7 +4,10 @@ var AvailableBet = React.createClass({
 
         React.render(
             <BetSlip betid={this.props.betid} event={this.props.event} name={this.props.name} odds={this.props.odds} />,
-            document.getElementById('bet-slip')
+            document.getElementById('bet-slip'),
+            function () {
+                this.replaceState(this.getInitialState());
+            }
         );
 
         return;
