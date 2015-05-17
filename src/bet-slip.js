@@ -20,15 +20,7 @@ var BetSlip = React.createClass({
 
         this.showPlacingBet();
 
-        $.ajax('http://skybettechtestapi.herokuapp.com/bets', {
-            contentType: 'application/json',
-            context: this,
-            data: JSON.stringify(data),
-            type: 'POST',
-            success: function (data) {
-                this.handleBetSuccess(data);
-            }
-        });
+        BettingService.placeBet(data, this.handleBetSuccess, this);
     },
     handleStakeChange: function () {
         var stake = parseFloat(React.findDOMNode(this.refs.stake).value.trim()),
@@ -69,7 +61,7 @@ var BetSlip = React.createClass({
                 </div>
                 <div className="bet-slip_submit">
                     <div className="input-submit">
-                        <input name="submit" type="submit" value="Place Bet" />
+                        <button name="submit" type="submit">Place Bet</button>
                     </div>
                 </div>
                 <div className="bet-slip_confirm">

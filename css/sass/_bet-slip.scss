@@ -1,47 +1,69 @@
 .bet-slip {
-	margin: 2em 0;
+	margin: 0;
+	padding: 0 1em;
 	border-top: 1px solid $primary-border;
 	border-bottom: 1px solid $primary-border;
+	position: fixed;
+	bottom: 0px;
+	background: $secondary-background;
+	color: $secondary-text;
+	width: 100%;
+	height: 200px;
+	box-sizing: border-box;
+
+	@include media($tablet-and-up) {
+		background: $primary-background;
+		color: $primary-text;
+		border-left: 1px solid $primary-border;
+		border-top: 0;
+		border-bottom: 0;
+		position: absolute;
+		right: 0;
+		height: 100%;
+		width: 33%;
+	}
 
 	h2, h3 {
 		margin: 0.5em 0 0.25em;
 	}
 }
 
-	.bet-slip_stake {
-		margin-right: 1em;
+	.bet-slip_stake {		
+		margin: 1em 0;
 
 		.input-text {
 			display: inline;
 
 			input {
 				font-size: 1em;
-				width: 50px;
+				width: 40px;
 			}
 		}
 
 		.receipt & {
-			.input-text input {
+			input {
+				color: $secondary-text;
 				border: 0;
+				background: transparent;
+
+				@include media($tablet-and-up) {
+					color: $primary-text;
+				}
 			}
 		}
 	}
 
 	.bet-slip_submit {
-		font-size: 1em;
+		margin: 1em 0;
 
 		.input-submit {
 			display: inline;
 		}
 
-		.waiting & {
-			.input-submit::after {
-				display: inline-block;
-				content: " ";
-				width: 16px;
-				height: 16px;
-				background: url(../img/loading.gif);				
-			}
+		button {
+			font-size: 1em;
+			height: 2em;
+			width: 100%;
 		}
 
 		.receipt & {
@@ -51,6 +73,7 @@
 
 	.bet-slip_confirm {
 		display: none;
+		margin: 1em 0;
 
 		.receipt & {
 			display: block;

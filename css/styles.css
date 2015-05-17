@@ -3,26 +3,43 @@ body { font-family: 'Lato', sans-serif; font-weight: 400; }
 
 h1, h2, h3 { font-weight: 300; }
 
-.bet-slip { margin: 2em 0; border-top: 1px solid #25265f; border-bottom: 1px solid #25265f; }
+body { margin: 0 0 200px; }
+
+.bet-slip { margin: 0; padding: 0 1em; border-top: 1px solid #25265f; border-bottom: 1px solid #25265f; position: fixed; bottom: 0px; background: #575999; color: #F3F3F3; width: 100%; height: 200px; box-sizing: border-box; }
+@media screen and (min-width: 800px) { .bet-slip { background: #F3F3F3; color: #25265F; border-left: 1px solid #25265f; border-top: 0; border-bottom: 0; position: absolute; right: 0; height: 100%; width: 33%; } }
 .bet-slip h2, .bet-slip h3 { margin: 0.5em 0 0.25em; }
 
-.bet-slip_stake { margin-right: 1em; }
+.bet-slip_stake { margin: 1em 0; }
 .bet-slip_stake .input-text { display: inline; }
-.bet-slip_stake .input-text input { font-size: 1em; width: 50px; }
-.receipt .bet-slip_stake .input-text input { border: 0; }
+.bet-slip_stake .input-text input { font-size: 1em; width: 40px; }
+.receipt .bet-slip_stake input { color: #F3F3F3; border: 0; background: transparent; }
+@media screen and (min-width: 800px) { .receipt .bet-slip_stake input { color: #25265F; } }
 
-.bet-slip_submit { font-size: 1em; }
+.bet-slip_submit { margin: 1em 0; }
 .bet-slip_submit .input-submit { display: inline; }
-.waiting .bet-slip_submit .input-submit::after { display: inline-block; content: " "; width: 16px; height: 16px; background: url(../img/loading.gif); }
+.bet-slip_submit button { font-size: 1em; height: 2em; width: 100%; }
 .receipt .bet-slip_submit { display: none; }
 
-.bet-slip_confirm { display: none; }
+.bet-slip_confirm { display: none; margin: 1em 0; }
 .receipt .bet-slip_confirm { display: block; }
 
-.bets-table { border-collapse: collapse; }
-.bets-table td, .bets-table th { padding: 10px; border-bottom: 1px solid #25265f; }
+.bets-table { box-sizing: border-box; }
+.bets-table table { width: 100%; border-collapse: collapse; }
+.bets-table td, .bets-table th { border-bottom: 1px solid #25265f; padding: 0.5em 1em; }
+.bets-table h4 { margin: 0.5em 0 0.25em; }
+@media screen and (min-width: 800px) { .bets-table { display: inline-block; width: 66%; } }
 
-.bets-table_column { width: 200px; }
+.bets-table_column { width: 50%; }
+@media screen and (min-width: 800px) { .bets-table_column { width: auto; } }
+
+.bets-table_column__bet { display: table-cell; }
+@media screen and (min-width: 800px) { .bets-table_column__bet { display: none; } }
+
+.bets-table_column__event { display: none; }
+@media screen and (min-width: 800px) { .bets-table_column__event { display: table-cell; } }
+
+.bets-table_column__outcome { display: none; }
+@media screen and (min-width: 800px) { .bets-table_column__outcome { display: table-cell; } }
 
 .bets-table_column__odds { text-align: center; }
 

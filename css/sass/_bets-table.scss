@@ -1,14 +1,56 @@
 .bets-table {
-	border-collapse: collapse;
+	box-sizing: border-box;
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
 
 	td, th {
-		padding: 10px;
 		border-bottom: 1px solid $primary-border;
+		padding: 0.5em 1em;
+	}
+
+	h4 {
+		margin: 0.5em 0 0.25em;
+	}
+
+	@include media($tablet-and-up) {
+		display: inline-block;
+		width: 66%;
 	}
 }
 
 	.bets-table_column {
-		width: 200px;
+		width: 50%;
+
+		@include media($tablet-and-up) {
+			width: auto;
+		}
+	}
+
+	.bets-table_column__bet {
+		display: table-cell;
+
+		@include media($tablet-and-up) {
+			display: none;
+		}
+	}
+
+	.bets-table_column__event {
+		display: none;
+
+		@include media($tablet-and-up) {
+			display: table-cell;
+		}
+	}
+
+	.bets-table_column__outcome {
+		display: none;
+
+		@include media($tablet-and-up) {
+			display: table-cell;
+		}
 	}
 
 	.bets-table_column__odds {

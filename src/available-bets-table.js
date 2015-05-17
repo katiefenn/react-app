@@ -5,13 +5,13 @@ var AvailableBetsTable = React.createClass({
         };
     },
     componentDidMount: function () {
-        $.get('http://skybettechtestapi.herokuapp.com/available', function (data) {
+        BettingService.getAvailableBets(function (data) {
             if (this.isMounted()) {
                 this.setState({
                     bets: data
                 });
             }
-        }.bind(this));
+        }, this);
     },
     render: function() {
         var betListItems = this.state.bets.map(function (bet) {
@@ -24,10 +24,11 @@ var AvailableBetsTable = React.createClass({
         return (
             <div>
                 <h2>Available Bets</h2>
-                <table className="bets-table">
+                <table>
                     <tr>
-                        <th className="bets-table_column">Event</th>
-                        <th className="bets-table_column">Bet</th>
+                        <th className="bets-table_column bets-table_column__bet">Bet</th>
+                        <th className="bets-table_column bets-table_column__event">Event</th>
+                        <th className="bets-table_column bets-table_column__outcome">Outcome</th>
                         <th className="bets-table_column bets-table_column__odds">Odds</th>
                     </tr>
                     {betListItems}

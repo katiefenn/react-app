@@ -13,8 +13,14 @@ var AvailableBet = React.createClass({
         var oddsLabel = this.props.odds.numerator + " / " + this.props.odds.denominator;
         return (
             <tr>
-                <td className="bets-table_column" >{this.props.event}</td>
-                <td className="bets-table_column" >{this.props.name}</td>
+                <td className="bets-table_column bets-table_column__bet" >
+                    <h4>Event:</h4>
+                    {this.props.event}
+                    <h4>Outcome:</h4>
+                    {this.props.name}
+                </td>
+                <td className="bets-table_column bets-table_column__event" >{this.props.event}</td>
+                <td className="bets-table_column bets-table_column__outcome" >{this.props.name}</td>
                 <td className="bets-table_column bets-table_column__odds" >
                     <form onSubmit={this.handleBetSelection}>
                         <input type="hidden" ref="betid" value={this.props.betid}></input>
